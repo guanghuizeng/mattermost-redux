@@ -17,6 +17,7 @@ const HEADER_USER_AGENT = 'User-Agent';
 const HEADER_X_CLUSTER_ID = 'X-Cluster-Id';
 const HEADER_X_CSRF_TOKEN = 'X-CSRF-Token';
 export const HEADER_X_VERSION_ID = 'X-Version-Id';
+const DEFAULT_CONTENT_TYPE = 'application/json;charset=UTF-8';
 
 const PER_PAGE_DEFAULT = 60;
 const LOGS_PER_PAGE_DEFAULT = 10000;
@@ -34,7 +35,7 @@ export default class Client4 {
         this.urlVersion = '/api/v4';
         this.userAgent = null;
         this.enableLogging = false;
-        this.defaultHeaders = {};
+        this.defaultHeaders = {"Content-Type" : DEFAULT_CONTENT_TYPE};
         this.userId = '';
         this.diagnosticId = '';
         this.includeCookies = true;
